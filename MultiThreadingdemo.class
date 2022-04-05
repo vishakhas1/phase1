@@ -1,0 +1,31 @@
+package com.Simplilearn.string;
+
+public class MultiThreadingdemo extends Thread{
+
+		@Override
+		public void run() {
+			for(int i =0;i<5;i++)
+			{
+				try {
+					Thread.currentThread().sleep(1000);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				System.out.println(Thread.currentThread().getName()+" "+i);
+				
+				
+			}
+		}
+		
+		public static void main(String[] args) {
+			MultiThreadingdemo t1= new MultiThreadingdemo();
+			MultiThreadingdemo t2= new MultiThreadingdemo();
+			MultiThreadingdemo t3= new MultiThreadingdemo();
+			
+			t1.start();
+			t2.start();
+			t3.start();
+		}
+
+
+}
